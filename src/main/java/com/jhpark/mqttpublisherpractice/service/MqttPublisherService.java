@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class MqttPublisherService {
 
-    private MqttClient mqttClient;
+    private final MqttClient mqttClient;
 
     public MqttPublisherService(MqttClient mqttClient) {
         this.mqttClient = mqttClient;

@@ -28,7 +28,6 @@ public class MqttConfig {
     @Bean
     public MqttClient mqttClient() {
         try {
-            System.out.println(brokerUrl);
             MqttClient mqttClient = new MqttClient(brokerUrl, clientId, new MemoryPersistence());
             mqttClient.connect(mqttConnectOptions());
             return mqttClient;

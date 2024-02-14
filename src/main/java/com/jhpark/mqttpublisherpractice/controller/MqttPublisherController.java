@@ -16,13 +16,7 @@ public class MqttPublisherController {
     }
 
     @PostMapping("/mqtt/publish")
-    public MqttRequestDto SendTopicAndMessage(@RequestBody MqttRequestDto mqttRequestDto) {
-//        ResponseEntity<MqttRequestDto>
+    public void SendTopicAndMessage(@RequestBody MqttRequestDto mqttRequestDto) {
         mqttPublisherService.sendMessage(mqttRequestDto.getTopic(), mqttRequestDto.getMessage());
-
-        MqttRequestDto mock = new MqttRequestDto("test", "test");
-        return mock;
     }
-
-    ;
 }
